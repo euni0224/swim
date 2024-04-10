@@ -1538,7 +1538,7 @@ body::-webkit-scrollbar-track {
   display: block;
   width: 31px;
   height: 31px;
-  background: url(../assets/images/prod-img-Arrow.png);
+  background: url(../images/prod-img-Arrow.png);
 }
 .sc-prod-view .prod-view-list .prod-view-item.show {
   z-index: 10;
@@ -1700,7 +1700,7 @@ body::-webkit-scrollbar-track {
   left: 0;
   width: 100%;
   height: 110%;
-  background: url(../assets/images/swim-intro1.jpg);
+  background: url(../images/swim-intro1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
