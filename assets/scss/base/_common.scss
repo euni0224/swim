@@ -1,0 +1,139 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+}
+
+.inner {
+    padding: 0 100px;
+}
+
+body {
+    &.hid {
+        overflow: hidden;
+        .header{
+            .gnb{
+                border: 0px solid #00000000;
+                background: none;
+                .menu-list{
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        /* 스크롤바의 너비 */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 10%;
+        /* 스크롤바의 길이 */
+        background: #001025;
+        /* 스크롤바의 색상 */
+
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(33, 122, 244, .1);
+        /*스크롤바 뒷 배경 색상*/
+    }
+}
+
+#cursor {
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+
+    .cur_cir {
+        width: 32px;
+        height: 32px;
+        margin-top: -50%;
+        margin-left: -50%;
+        border-radius: 50%;
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        opacity: 0;
+    }
+
+    &.overlay {
+        mix-blend-mode: normal;
+
+        .cur_cir {
+            width: 117px;
+            height: 117px;
+            transform: rotate(0) scale(1) translate(0, 0) !important;
+            position: relative;
+            opacity: 1;
+            background-color: #406eb6;
+
+            &::before {
+                content: "view";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                font-size: 20px;
+                font-family: "Play", sans-serif;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+            }
+        }
+
+        &.close {
+            .cur_cir {
+                background-color: #db590f;
+
+                &::before {
+                    content: "close";
+                }
+            }
+
+            &.pointer {
+                .cur_cir {
+                    width: 150px;
+                    height: 150px;
+                    background-color: rgba(64, 110, 182, 0.7);
+                    opacity: 1;
+                    &::before {
+                        content: "more";
+                    }
+                }
+            }
+        }
+    }
+    &.pointer{
+        .cur_cir {
+            width: 117px;
+            height: 117px;
+            transform: rotate(0) scale(1) translate(0, 0) !important;
+            position: relative;
+            opacity: 1;
+            background-color: #406eb6;
+            &::before {
+                content: "more";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                font-size: 20px;
+                font-family: "Play", sans-serif;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+            }
+        }
+    } 
+
+}

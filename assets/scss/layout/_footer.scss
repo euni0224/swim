@@ -1,0 +1,98 @@
+.footer{
+    background: #000;
+    color: #fff;
+    padding: 80px 200px 40px ;
+    @include desktopplus {
+        padding: 80px 50px 30px;
+    }
+    .ft-menu-all{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #3b3b3b;
+        .scroll-up{
+            position: relative;
+            width: 139px;
+            height: 139px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                position: absolute;
+                top: 0;left: 0;
+                animation: rotation 8s infinite linear
+            }
+            i{
+                position: absolute;
+                animation: updown 1s alternate-reverse ease-in-out infinite;
+            }
+        }
+    }
+    .ft-menu-list{
+        display: flex;
+        gap: 100px;
+        padding-bottom: 80px;
+        @include desktopplus {
+            gap: 50px;
+        }
+        .ft-menu-item{
+
+            .btn-ft-tit{
+                font-weight: bold;
+                display: block;
+                margin-bottom: 30px;
+            }
+            .ft-menu-item{
+                padding: 8px 0;
+                font-size: 13px;
+                color: #a3a3a3;
+                a{
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .ft-info{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+        .ft-info-left{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 11px;
+            color: #a3a3a3;
+            h3{
+                width: 87px;
+                height: 37px;
+                background: url(/assets/images/logo_w.svg);
+                margin-bottom: 20px;
+            }
+        }
+        address{
+            display: flex;
+            @include desktop {
+                flex-direction: column;
+                gap: 5px;
+                i{
+                    display: none;
+                }
+            }
+        }
+        i{
+            margin: 0 10px;
+            color: #a3a3a3;
+        }
+        .ft-info-right{
+            color: #a3a3a3;
+            font-size: 11px;
+            a{
+                padding: 15px;
+            }
+            .btn-com{
+                padding-right: 0;
+            }
+        }
+    }
+}
