@@ -1538,7 +1538,7 @@ body::-webkit-scrollbar-track {
   display: block;
   width: 31px;
   height: 31px;
-  background: url(/assets/images/prod-img-Arrow.png);
+  background: url(../assets/images/prod-img-Arrow.png);
 }
 .sc-prod-view .prod-view-list .prod-view-item.show {
   z-index: 10;
