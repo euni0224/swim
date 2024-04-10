@@ -224,7 +224,7 @@ $(function () {
     ScrollTrigger.create({
         trigger: '.sc-main-slid',
         pin: true,
-        // invalidateOnRefresh: true,
+        // iㅇ
         // pinSpacing: false,
         // markers: true,
         // scrub: 1,
@@ -238,14 +238,13 @@ $(function () {
         // scrub: 2,
         onEnter: function () {
             $('.sc-main-slid').addClass('chg');
-            // $('.sc-main-slid').addClass('chg2');
             $('.header').addClass('set');
 
             swiper1.autoplay.start();
         },
         onLeaveBack: function () {
             $('.sc-main-slid').removeClass('chg');
-            // $('.sc-main-slid').removeClass('chg2');
+
             $('.header').removeClass('set');
 
             swiper1.autoplay.stop();

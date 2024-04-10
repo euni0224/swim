@@ -472,7 +472,7 @@ body::-webkit-scrollbar-track {
 }
 @media (max-width: 767px) {
   .header .group-head .btn-ham {
-    right: 10px;
+    right: 20px;
   }
 }
 .header .group-head .btn-ham.eff i {
