@@ -27,7 +27,8 @@
                 top: 0;
                 left: 150px;
                 display: block;
-                background: url(../images/logo.svg)no-repeat center;
+                background: url(../images/swim-logo.svg)no-repeat center;
+                background-size: 80px auto;
                 transition: 0.5s;
                 transform: scale(1.2) translate(20px, 20px);
                 width: 100px;
@@ -35,6 +36,10 @@
 
                 @include desktopplus {
                     left: 50px;
+                }
+                @include mobilemin {
+                    left: 10px;
+                    width: 80px;
                 }
             }
 
@@ -166,6 +171,7 @@
                                 visibility: visible;
                                 opacity: 1;
                                 left: 100%;
+                                background: #ffffff;
                             }
                         }
 
@@ -205,6 +211,9 @@
 
             @include desktopplus {
                 right: 50px;
+            }
+            @include mobilemin {
+                right: 10px;
             }
 
             &.eff {
@@ -289,6 +298,13 @@
             padding: 120px 70px 0;
         }
 
+        @include mobile {
+            padding: 120px 70px;
+        }
+        @include mobilemin {
+            padding: 100px 10px;
+        }
+
         .logo-box {
             strong {
                 position: absolute;
@@ -314,6 +330,26 @@
 
         .menu-list {
             color: rgba(255, 255, 255, 0.4);
+
+            @include mobile {
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    width: 8px;
+                    border-radius: 10px;
+                    background-color: rgba(211, 211, 211, 0.854);
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: rgba(69, 69, 69, 0.155);
+                }
+            }
 
             a {
                 transition: 0.5s;
@@ -351,10 +387,14 @@
                         font-size: 30px;
                         width: 200px;
                     }
+
                     @include mobile {
                         border-bottom: 1px solid #ffffff;
                         width: 100%;
+                        font-size: 28px;
+                        padding: 15px 0;
                     }
+
                     &.act {
                         color: #fff;
                     }
@@ -362,22 +402,26 @@
 
                 .sub-menu-list {
                     padding-top: 20px;
+
                     @include mobile {
                         display: none;
                     }
-                    .sub-menu-name{
+
+                    .sub-menu-name {
                         padding: 10px 0px;
                         display: block;
                         color: #fff;
                     }
+
                     .sub-menu-detail-list {
-                        li{
+                        li {
                             padding: 5px;
                         }
+
                         @include mobile {
                             display: none;
                         }
-                        }
+                    }
                 }
 
                 .csseff {
@@ -404,6 +448,7 @@
                             top: calc(100% + 20px);
                             left: 0;
                             white-space: nowrap;
+
                             @include mobile {
                                 display: none;
                             }
@@ -480,9 +525,9 @@
 
         .group-head {
             .hd-logo {
-                background: url(../images/logo_w.svg)no-repeat center;
+                // background: url(../images/logo_w.svg)no-repeat center;
                 height: 100%;
-                transform: scale(1) translate(0px, 0px);
+                transform: scale(0.8) translate(0px, 0px);
             }
 
 

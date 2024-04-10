@@ -170,9 +170,10 @@ $(function () {
         }
     })
     $(".sub-lnb .sub-menu-name").click(function(e){
+        e.preventDefault();
         if ($(window).width() < 768) {
             $(this).next().slideToggle();
-            $(this).parent().siblings().find('.sub-menu-detail-list').stop().slideUp();;
+            // $(this).parent().siblings().find('.sub-menu-detail-list').stop().slideUp();;
         }
     })
 

@@ -1,5 +1,8 @@
 .sc-main-slid {
     position: relative;
+    overflow: hidden;
+    width: 100%;
+
 
     .head-connection {
         position: absolute;
@@ -30,10 +33,16 @@
             @include desktopplus {
                 padding: 100px 50px 100px 50px;
             }
-            @include desktop{
+
+            @include desktop {
                 justify-content: start;
                 gap: 50px;
             }
+
+            @include mobilemin {
+                padding: 120px 10px 0;
+            }
+
 
             .head-box {
                 display: flex;
@@ -50,11 +59,19 @@
                 @include desktopplus {
                     font-size: 16px;
                 }
-                
+
+                @include mobile {
+                    font-size: 12px;
+                }
+
 
                 em {
                     @include desktopplus {
                         font-size: 25px;
+                    }
+
+                    @include mobile {
+                        font-size: 15px;
                     }
 
                     font-size: 30px;
@@ -70,9 +87,19 @@
                     font-size: 80px;
                     letter-spacing: -5.5px;
                 }
+
                 @include desktop {
                     padding-top: 20px;
                     font-size: 50px;
+                }
+
+                @include mobile {
+                    font-size: 35px;
+                    letter-spacing: -2.5px;
+                }
+
+                @include mobilemin {
+                    font-size: 20px;
                 }
 
                 p {
@@ -90,8 +117,18 @@
                     @include desktopplus {
                         line-height: 100px;
                     }
-                    @include desktop{
+
+                    @include desktop {
                         line-height: 80px;
+                    }
+
+                    @include mobile {
+                        padding-top: 0;
+                        line-height: 50px;
+                    }
+
+                    @include mobilemin {
+                        line-height: 30px;
                     }
                 }
 
@@ -107,8 +144,19 @@
                 margin-top: 45px;
                 font-size: 18px;
                 transition: 0.5s;
-                @include desktop{
+
+                @include desktop {
                     margin-top: 20px;
+                }
+
+                @include mobile {
+                    font-size: 15px;
+                    margin-top: 10px;
+                }
+
+                @include mobilemin {
+                    font-size: 12px;
+                    margin: 0;
                 }
             }
 
@@ -116,8 +164,13 @@
                 text-align: right;
                 font-size: 20px;
                 color: rgba(0, 0, 0, 0.3);
+
                 @include desktop {
                     font-size: 18px;
+                }
+
+                @include mobilemin {
+                    font-size: 12px;
                 }
 
             }
@@ -140,6 +193,16 @@
                 left: 50px;
             }
 
+            @include mobile {
+                width: 80px;
+                height: 80px;
+                font-size: 10px;
+            }
+
+            @include mobilemin {
+                display: none;
+            }
+
             img {
                 position: absolute;
                 top: 0;
@@ -159,7 +222,6 @@
         position: relative;
         height: 100vh;
         overflow: hidden;
-        min-height: 840px;
         z-index: -1;
 
         &::after {
@@ -200,10 +262,22 @@
         @include desktopplus {
             font-size: 150px;
         }
+
         @include desktop {
             font-size: 80px;
             transform: translateY(calc(50% + 20px));
         }
+
+        @include mobile {
+            font-size: 60px;
+            width: 60vw;
+        }
+
+        @include mobilemin {
+            width: 95vw;
+        }
+
+
 
         strong {
             padding: 0 0 50px 0;
@@ -231,17 +305,41 @@
                 p {
                     font-size: 31px;
                     letter-spacing: -3px;
+
+                    @include mobilemin {
+                        font-size: 20px;
+                        letter-spacing: -1px;
+                    }
                 }
 
                 strong {
                     padding: 20px 0;
                     line-height: 80px;
+
+                    @include mobile {
+                        line-height: 55px;
+                        padding: 10px 0;
+                    }
+
+                    @include mobilemin {
+                        line-height: 40px;
+                    }
+
                 }
 
                 strong,
                 em {
                     font-size: 60px;
                     font-weight: normal;
+
+                    @include mobile {
+                        font-size: 40px;
+                    }
+
+                    @include mobilemin {
+                        font-size: 25px;
+                        letter-spacing: -1px;
+                    }
                 }
 
             }
@@ -252,7 +350,6 @@
         }
 
         .group-slid {
-            min-height: 840px;
 
             &::after {
                 height: 30vh;
@@ -284,6 +381,10 @@
         padding: 140px 50px 250px;
     }
 
+    @include mobilemin {
+        padding: 100px 10px;
+    }
+
     .title {
         font-size: 22px;
         color: rgba(0, 0, 0, 0.8);
@@ -297,8 +398,18 @@
         @include desktopplus {
             font-size: 70px;
         }
+
         @include desktop {
             font-size: 50px;
+        }
+
+        @include mobile {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        @include mobilemin {
+            font-size: 25px;
         }
     }
 
@@ -308,6 +419,12 @@
         margin-top: 130px;
         max-width: 1010px;
 
+        @include mobile {
+            margin-top: 50px;
+            flex-direction: column;
+            border-bottom: 1px solid #000;
+        }
+
         li {
             width: 29.6842105263%;
             margin-right: 5.2631578947%;
@@ -315,24 +432,41 @@
             padding: 20px 0;
             border-top: 1px solid #000;
 
+            @include mobile {
+                width: 100%;
+            }
+
             &:nth-last-child(1) {
                 margin-right: 0;
+
+                @include mobile {
+                    margin-right: 5.2631578947%;
+                }
             }
         }
 
         .link-prod {
             h3 {
                 font-size: 25px;
+
                 @include desktop {
                     font-size: 22px;
                 }
 
+                @include mobile {
+                    font-size: 18px;
+                }
             }
 
             span {
                 font-size: 14px;
                 margin-top: 10px;
+                display: block;
                 color: rgba(147, 148, 153, 0.8);
+
+                @include mobile {
+                    font-size: 10px;
+                }
             }
 
             p {
@@ -360,6 +494,7 @@
 
 .sc-prod-view {
     height: 100vh;
+    overflow: hidden;
 
     .prod-view-list {
         position: relative;
@@ -371,15 +506,25 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: calc(100% / 5);
+            width: calc(100% / 4);
             height: 100vh;
             transition: 0.5s;
-            background: url(../images/prod-01.jpg) center;
+            background: url(../images/swim-view-01.jpg) center;
             box-sizing: border-box;
             z-index: 5;
 
+            @include mobile {
+                width: 100vw;
+                height: 25vh;
+            }
+
             &+.prod-view-item {
                 border-left: 1px solid #3b3b3b;
+
+                @include mobile {
+                    border-left: 0px solid #3b3b3b;
+                    border-top: 1px solid #3b3b3b;
+                }
             }
 
             .Subtitle {
@@ -389,6 +534,21 @@
                 opacity: 0;
                 font-size: 45px;
                 line-height: 60px;
+
+                @include desktopplus {
+                    left: 50px !important;
+                }
+
+                @include mobile {
+                    top: 120px;
+                    font-size: 40px;
+                }
+
+                @include mobilemin {
+                    font-size: 30px;
+                    left: 10px !important;
+                    line-height: 40px;
+                }
 
             }
 
@@ -408,12 +568,31 @@
                     font-weight: 500;
                     margin-bottom: 30px;
                     transition: 0.5s;
+
+                    @include mobile {
+                        margin-bottom: 10px;
+                    }
+
+                    @include mobilemin {
+                        font-size: 20px;
+                        letter-spacing: -1px;
+                    }
                 }
 
                 em {
                     font-weight: 700;
                     font-size: 20px;
                     transition: 0.5s;
+
+                    @include mobile {
+                        br {
+                            display: none;
+                        }
+                    }
+
+                    @include mobilemin {
+                        font-size: 15px;
+                    }
                 }
             }
 
@@ -429,15 +608,26 @@
                     right: 50px;
 
                 }
+
                 @include desktop {
                     top: 400px;
-                                }
+                }
+
+                @include mobilemin {
+                    top: 280px;
+                    right: 30px;
+                }
 
                 .img-box {
                     border-radius: 50%;
                     overflow: hidden;
                     width: 200px;
                     height: 200px;
+
+                    @include mobilemin {
+                        width: 150px;
+                        height: 150px;
+                    }
                 }
 
                 .img-our-box {
@@ -451,6 +641,11 @@
                     @include desktopplus {
                         width: 250px;
                         height: 250px;
+                    }
+
+                    @include mobilemin {
+                        width: 200px;
+                        height: 200px;
                     }
                 }
 
@@ -471,16 +666,17 @@
                 left: 0 !important;
                 width: 100%;
 
+                @include mobile {
+                    top: 0vh !important;
+                    height: 100vh;
+                }
+
                 // background-size: 110% 110%;
                 .Subtitle {
                     left: 200px;
                     opacity: 1;
                     transition: 0.5s;
                     transition-delay: 0.5s;
-
-                    @include desktopplus {
-                        left: 50px;
-                    }
                 }
 
                 .text-box {
@@ -490,12 +686,25 @@
                         padding: 0 0 50px 50px;
                     }
 
+                    @include mobilemin {
+                        padding: 0 0 50px 10px;
+                    }
+
                     h3 {
                         font-size: 70px;
 
                         @include desktopplus {
                             font-size: 50px;
                         }
+
+                        @include mobile {
+                            font-size: 35px;
+                        }
+
+                        @include mobilemin {
+                            font-size: 25px;
+                        }
+
                     }
 
                     em {
@@ -503,6 +712,10 @@
 
                         @include desktopplus {
                             font-size: 20px;
+                        }
+
+                        @include mobile {
+                            font-size: 15px;
                         }
 
                         br {
@@ -557,20 +770,35 @@
             }
 
             &:nth-child(2) {
-                left: 20%;
+                left: 25%;
+                background: url(../images/swim-view-02-1.jpg) center;
+
+                @include mobile {
+                    top: 25vh;
+                    left: 0;
+                }
             }
 
             &:nth-child(3) {
-                left: 40%;
+                left: 50%;
+                background: url(../images/swim-view-03.jpg) center;
+
+                @include mobile {
+                    top: 50vh;
+                    left: 0;
+                }
             }
 
             &:nth-child(4) {
-                left: 60%;
+                left: 75%;
+                background: url(../images/swim-view-04.jpg) center;
+
+                @include mobile {
+                    top: 75vh;
+                    left: 0;
+                }
             }
 
-            &:nth-child(5) {
-                left: 80%;
-            }
 
             &::before {
                 content: '';
@@ -615,7 +843,7 @@
         left: 0;
         width: 100%;
         height: 110%;
-        background: url(/assets/images/intro.jpg);
+        background: url(/assets/images/swim-intro.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -629,11 +857,33 @@
         justify-content: center;
         box-sizing: border-box;
         padding: 0 200px;
+
         @include desktopplus {
             padding: 0 50px;
         }
+
+        @include mobilemin {
+            padding: 0 10px;
+        }
+
         .txt-effect {
             position: relative;
+
+            &.n2 {
+                margin-left: 50px;
+
+                @include mobile {
+                    margin-left: 10px;
+                }
+            }
+
+            &.n3 {
+                margin-left: 150px;
+
+                @include mobile {
+                    margin-left: 30px;
+                }
+            }
 
             .title-back {
                 position: absolute;
@@ -649,21 +899,43 @@
         font-size: 22px;
         font-weight: 700;
         color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 50px;
+
+        @include mobile {
+            margin-bottom: 0px;
+        }
+
+        @include mobilemin {
+            font-size: 18px;
+        }
     }
 
     .title,
     .title-back {
-        margin-top: 55px;
+        margin-top: 30px;
         font-size: 70px;
         font-weight: 700;
         color: rgba(255, 255, 255, 0.5);
         margin-left: 20px;
+
         @include desktopplus {
             font-size: 60px;
         }
-        @include desktopplus {
+
+        @include desktop {
             font-size: 45px;
         }
+
+        @include mobile {
+            font-size: 30px;
+            margin-left: 0;
+        }
+
+        @include mobilemin {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
     }
 
     .sub-title {
@@ -671,8 +943,17 @@
         margin-top: 80px;
         color: #fff;
         font-weight: 700;
+
         @include desktopplus {
             font-size: 30px;
+        }
+
+        @include mobile {
+            font-size: 15px;
+            margin-top: 30px;
+        }
+        @include mobilemin {
+            font-size: 12px;
         }
     }
 }
@@ -686,12 +967,18 @@
         align-items: end;
         border-bottom: 1px solid #e1e1e1;
         padding: 0px 200px 50px;
+
         @include desktopplus {
             padding: 0 50px 50px;
         }
+        @include mobilemin {
+            padding: 0 10px 30px;
+        }
+
         h2 {
             font-size: 50px;
             font-weight: 700;
+
             @include desktopplus {
                 font-size: 30px;
             }
@@ -701,15 +988,18 @@
         .btn-more {
             font-size: 18px;
             font-weight: 700;
+
             @include desktopplus {
                 font-size: 15px;
             }
+
             i {
                 margin-left: 10px;
                 position: relative;
                 display: inline-block;
                 width: 16px;
                 height: 16px;
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -754,14 +1044,24 @@
     .news-list {
         padding: 80px 200px;
         border-bottom: 1px solid #e1e1e1;
+
         @include desktopplus {
             padding: 50px 50px;
         }
+        @include mobilemin {
+            padding: 30px 10px;
+        }
+
         li {
             width: 25%;
+
             @include desktopplus {
                 width: 50%;
             }
+            @include mobilemin {
+                width: 100%;
+            }
+
             a {
                 &:hover {
                     .bg {
